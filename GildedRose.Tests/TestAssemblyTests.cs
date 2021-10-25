@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using GildedRose;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace GildedRose.Tests
@@ -55,12 +55,21 @@ namespace GildedRose.Tests
         }
 
         [Fact]
+        public void AgedBriesQualityIncreases()
+        {
+            app.UpdateQuality();
+            var brie = app.Items.Where(item => item.Name == "Aged Brie").FirstOrDefault();
+            Assert.Equal(1, brie.Quality);
+        }
+
+        [Fact]
         public void common_item_degrade_twice_as_fast_when_sellin_date_reached()
         {
             var item = new Item { Name = "Common Item", SellIn = 2, Quality = 10 };
             app.Items.Add(item);
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 3; i++)
+            {
                 app.UpdateQuality();
             }
 
@@ -68,7 +77,8 @@ namespace GildedRose.Tests
         }
 
         [Fact]
-        public void common_item_cannot_reach_negative_quality() {
+        public void common_item_cannot_reach_negative_quality()
+        {
 
             var item = new Item { Name = "Common Item", SellIn = 10, Quality = 0 };
             app.Items.Add(item);
@@ -78,8 +88,9 @@ namespace GildedRose.Tests
         }
 
         [Fact]
-        public void sulfuras_quality_and_sellin_properties_never_change() {
-            
+        public void sulfuras_quality_and_sellin_properties_never_change()
+        {
+
             Assert.Equal(0, app.Items[3].SellIn);
             Assert.Equal(80, app.Items[3].Quality);
 
