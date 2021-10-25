@@ -41,7 +41,7 @@ namespace GildedRose.Tests
             app.Items.Add(item);
             app.UpdateQuality();
 
-            Assert.Equal(4, item.Quality - 1);
+            Assert.Equal(4, item.Quality);
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace GildedRose.Tests
             app.Items.Add(item);
             app.UpdateQuality();
 
-            Assert.Equal(4, item.SellIn - 1);
+            Assert.Equal(4, item.SellIn);
         }
 
         [Fact]
