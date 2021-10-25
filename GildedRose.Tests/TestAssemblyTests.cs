@@ -55,13 +55,39 @@ namespace GildedRose.Tests
         }
 
         [Fact]
-        public void test()
+        public void common_item_degrade_twice_as_fast_when_sellin_date_reached()
         {
+            var item = new Item { Name = "Common Item", SellIn = 2, Quality = 10 };
+            app.Items.Add(item);
 
+            for (int i = 0; i < 3; i++) {
+                app.UpdateQuality();
+            }
+
+            Assert.Equal(6, item.Quality);
         }
 
+        [Fact]
+        public void common_item_cannot_reach_negative_quality() {
 
+            var item = new Item { Name = "Common Item", SellIn = 10, Quality = 0 };
+            app.Items.Add(item);
+            app.UpdateQuality();
 
+            Assert.Equal(0, item.Quality);
+        }
+
+        [Fact]
+        public void sulfuras_quality_and_sellin_properties_never_change() {
+            
+            Assert.Equal(0, app.Items[3].SellIn);
+            Assert.Equal(80, app.Items[3].Quality);
+
+            app.UpdateQuality();
+
+            Assert.Equal(0, app.Items[3].SellIn);
+            Assert.Equal(80, app.Items[3].Quality);
+        }
 
         //Tests to make:
         // Once the sell by date has passed, Quality degrades twice as fast
