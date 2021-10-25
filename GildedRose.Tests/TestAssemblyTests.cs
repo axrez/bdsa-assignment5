@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using GildedRose;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace GildedRose.Tests
@@ -55,9 +55,11 @@ namespace GildedRose.Tests
         }
 
         [Fact]
-        public void test()
+        public void AgedBriesQualityIncreases()
         {
-
+            app.UpdateQuality();
+            var brie = app.Items.Where(item => item.Name == "Aged Brie").FirstOrDefault();
+            Assert.Equal(1, brie.Quality);
         }
 
 
