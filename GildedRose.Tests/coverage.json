@@ -2,11 +2,16 @@
   "GildedRose.dll": {
     "/Volumes/Code/Code/itu/bdsa/Assignment5/GildedRose/Program.cs": {
       "GildedRose.Program": {
+        "System.Void modreq(System.Runtime.CompilerServices.IsExternalInit) GildedRose.Program::set_Items(System.Collections.Generic.IList`1<GildedRose.Item>)": {
+          "Lines": {
+            "8": 895
+          },
+          "Branches": []
+        },
         "System.Void GildedRose.Program::Main(System.String[])": {
           "Lines": {
-            "10": 0,
             "11": 0,
-            "13": 0,
+            "12": 0,
             "14": 0,
             "15": 0,
             "16": 0,
@@ -22,7 +27,7 @@
             "26": 0,
             "27": 0,
             "28": 0,
-            "30": 0,
+            "29": 0,
             "31": 0,
             "32": 0,
             "33": 0,
@@ -33,37 +38,38 @@
             "38": 0,
             "39": 0,
             "40": 0,
-            "42": 0
+            "41": 0,
+            "43": 0
           },
           "Branches": [
             {
-              "Line": 30,
-              "Offset": 619,
-              "EndOffset": 405,
+              "Line": 31,
+              "Offset": 620,
+              "EndOffset": 406,
               "Path": 1,
               "Ordinal": 3,
               "Hits": 0
             },
             {
-              "Line": 34,
-              "Offset": 582,
-              "EndOffset": 449,
+              "Line": 35,
+              "Offset": 583,
+              "EndOffset": 450,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 0
             },
             {
-              "Line": 34,
-              "Offset": 582,
-              "EndOffset": 587,
+              "Line": 35,
+              "Offset": 583,
+              "EndOffset": 588,
               "Path": 0,
               "Ordinal": 0,
               "Hits": 0
             },
             {
-              "Line": 30,
-              "Offset": 619,
-              "EndOffset": 624,
+              "Line": 31,
+              "Offset": 620,
+              "EndOffset": 625,
               "Path": 0,
               "Ordinal": 2,
               "Hits": 0
@@ -72,173 +78,173 @@
         },
         "System.Void GildedRose.Program::UpdateQuality()": {
           "Lines": {
-            "45": 0,
-            "46": 0,
-            "47": 0,
-            "48": 0,
-            "49": 0,
-            "50": 0,
-            "51": 0,
-            "52": 0,
-            "53": 0,
-            "54": 0,
-            "55": 0,
-            "56": 0,
-            "57": 0,
-            "59": 0,
-            "60": 0,
-            "61": 0,
-            "62": 0,
-            "64": 0,
-            "65": 0,
-            "66": 0,
-            "67": 0,
-            "68": 0,
-            "69": 0,
+            "46": 8,
+            "47": 172,
+            "48": 78,
+            "49": 78,
+            "50": 46,
+            "51": 46,
+            "52": 45,
+            "53": 45,
+            "54": 29,
+            "55": 29,
+            "56": 29,
+            "57": 45,
+            "58": 46,
+            "60": 32,
+            "61": 32,
+            "62": 28,
+            "63": 28,
+            "65": 28,
+            "66": 20,
+            "67": 20,
+            "68": 12,
+            "69": 12,
             "70": 0,
             "71": 0,
             "72": 0,
-            "74": 0,
-            "75": 0,
-            "76": 0,
-            "77": 0,
+            "73": 12,
+            "75": 20,
+            "76": 6,
+            "77": 6,
             "78": 0,
             "79": 0,
             "80": 0,
-            "81": 0,
-            "82": 0,
-            "83": 0,
-            "85": 0,
-            "86": 0,
-            "87": 0,
-            "88": 0,
-            "90": 0,
-            "91": 0,
-            "92": 0,
-            "93": 0,
-            "94": 0,
-            "95": 0,
-            "96": 0,
-            "97": 0,
-            "98": 0,
-            "99": 0,
-            "100": 0,
-            "101": 0,
-            "102": 0,
-            "103": 0,
-            "105": 0,
+            "81": 6,
+            "82": 20,
+            "83": 28,
+            "84": 32,
+            "86": 78,
+            "87": 62,
+            "88": 62,
+            "89": 62,
+            "91": 78,
+            "92": 10,
+            "93": 10,
+            "94": 9,
+            "95": 9,
+            "96": 9,
+            "97": 9,
+            "98": 9,
+            "99": 9,
+            "100": 1,
+            "101": 1,
+            "102": 1,
+            "103": 9,
+            "104": 9,
             "106": 0,
             "107": 0,
             "108": 0,
-            "110": 0,
-            "111": 0,
-            "112": 0,
-            "113": 0,
-            "114": 0,
-            "115": 0,
-            "116": 0,
-            "117": 0,
-            "118": 0
+            "109": 9,
+            "111": 1,
+            "112": 1,
+            "113": 1,
+            "114": 1,
+            "115": 1,
+            "116": 1,
+            "117": 10,
+            "118": 78,
+            "119": 8
           },
           "Branches": [
             {
-              "Line": 46,
+              "Line": 47,
               "Offset": 899,
               "EndOffset": 8,
               "Path": 1,
               "Ordinal": 35,
-              "Hits": 0
+              "Hits": 78
             },
             {
-              "Line": 48,
+              "Line": 49,
               "Offset": 36,
               "EndOffset": 38,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 0
+              "Hits": 70
             },
             {
-              "Line": 48,
+              "Line": 49,
               "Offset": 36,
               "EndOffset": 67,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 8
             },
             {
-              "Line": 48,
+              "Line": 49,
               "Offset": 70,
               "EndOffset": 72,
               "Path": 0,
               "Ordinal": 2,
-              "Hits": 0
+              "Hits": 46
             },
             {
-              "Line": 50,
+              "Line": 51,
               "Offset": 95,
               "EndOffset": 97,
               "Path": 0,
               "Ordinal": 4,
-              "Hits": 0
+              "Hits": 45
             },
             {
-              "Line": 52,
+              "Line": 53,
               "Offset": 127,
               "EndOffset": 129,
               "Path": 0,
               "Ordinal": 6,
-              "Hits": 0
+              "Hits": 29
             },
             {
-              "Line": 52,
+              "Line": 53,
               "Offset": 127,
               "EndOffset": 168,
               "Path": 1,
               "Ordinal": 7,
-              "Hits": 0
+              "Hits": 45
             },
             {
-              "Line": 50,
+              "Line": 51,
               "Offset": 95,
               "EndOffset": 169,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 0
+              "Hits": 46
             },
             {
-              "Line": 48,
+              "Line": 49,
               "Offset": 70,
               "EndOffset": 175,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 0
+              "Hits": 32
             },
             {
-              "Line": 60,
+              "Line": 61,
               "Offset": 201,
               "EndOffset": 206,
               "Path": 0,
               "Ordinal": 8,
-              "Hits": 0
+              "Hits": 28
             },
             {
-              "Line": 64,
+              "Line": 65,
               "Offset": 275,
               "EndOffset": 280,
               "Path": 0,
               "Ordinal": 10,
-              "Hits": 0
+              "Hits": 20
             },
             {
-              "Line": 66,
+              "Line": 67,
               "Offset": 306,
               "EndOffset": 308,
               "Path": 0,
               "Ordinal": 12,
-              "Hits": 0
+              "Hits": 12
             },
             {
-              "Line": 68,
+              "Line": 69,
               "Offset": 334,
               "EndOffset": 336,
               "Path": 0,
@@ -246,31 +252,31 @@
               "Hits": 0
             },
             {
-              "Line": 68,
+              "Line": 69,
               "Offset": 334,
               "EndOffset": 375,
               "Path": 1,
               "Ordinal": 15,
-              "Hits": 0
+              "Hits": 12
             },
             {
-              "Line": 66,
+              "Line": 67,
               "Offset": 306,
               "EndOffset": 376,
               "Path": 1,
               "Ordinal": 13,
-              "Hits": 0
+              "Hits": 20
             },
             {
-              "Line": 74,
+              "Line": 75,
               "Offset": 400,
               "EndOffset": 402,
               "Path": 0,
               "Ordinal": 16,
-              "Hits": 0
+              "Hits": 6
             },
             {
-              "Line": 76,
+              "Line": 77,
               "Offset": 428,
               "EndOffset": 430,
               "Path": 0,
@@ -278,111 +284,111 @@
               "Hits": 0
             },
             {
-              "Line": 76,
+              "Line": 77,
               "Offset": 428,
               "EndOffset": 469,
               "Path": 1,
               "Ordinal": 19,
-              "Hits": 0
+              "Hits": 6
             },
             {
-              "Line": 74,
+              "Line": 75,
               "Offset": 400,
               "EndOffset": 470,
               "Path": 1,
               "Ordinal": 17,
-              "Hits": 0
+              "Hits": 20
             },
             {
-              "Line": 64,
+              "Line": 65,
               "Offset": 275,
               "EndOffset": 471,
               "Path": 1,
               "Ordinal": 11,
-              "Hits": 0
+              "Hits": 28
             },
             {
-              "Line": 60,
+              "Line": 61,
               "Offset": 201,
               "EndOffset": 472,
               "Path": 1,
               "Ordinal": 9,
-              "Hits": 0
+              "Hits": 32
             },
             {
-              "Line": 85,
+              "Line": 86,
               "Offset": 504,
               "EndOffset": 506,
               "Path": 0,
               "Ordinal": 20,
-              "Hits": 0
+              "Hits": 62
             },
             {
-              "Line": 85,
+              "Line": 86,
               "Offset": 504,
               "EndOffset": 545,
               "Path": 1,
               "Ordinal": 21,
-              "Hits": 0
+              "Hits": 78
             },
             {
-              "Line": 90,
+              "Line": 91,
               "Offset": 569,
               "EndOffset": 574,
               "Path": 0,
               "Ordinal": 22,
-              "Hits": 0
+              "Hits": 10
             },
             {
-              "Line": 92,
+              "Line": 93,
               "Offset": 606,
               "EndOffset": 611,
               "Path": 0,
               "Ordinal": 24,
-              "Hits": 0
+              "Hits": 9
             },
             {
-              "Line": 94,
+              "Line": 95,
               "Offset": 643,
               "EndOffset": 645,
               "Path": 0,
               "Ordinal": 26,
-              "Hits": 0
+              "Hits": 9
             },
             {
-              "Line": 96,
+              "Line": 97,
               "Offset": 670,
               "EndOffset": 672,
               "Path": 0,
               "Ordinal": 28,
-              "Hits": 0
+              "Hits": 9
             },
             {
-              "Line": 98,
+              "Line": 99,
               "Offset": 704,
               "EndOffset": 706,
               "Path": 0,
               "Ordinal": 30,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 98,
+              "Line": 99,
               "Offset": 704,
               "EndOffset": 745,
               "Path": 1,
               "Ordinal": 31,
-              "Hits": 0
+              "Hits": 9
             },
             {
-              "Line": 96,
+              "Line": 97,
               "Offset": 670,
               "EndOffset": 746,
               "Path": 1,
               "Ordinal": 29,
-              "Hits": 0
+              "Hits": 9
             },
             {
-              "Line": 94,
+              "Line": 95,
               "Offset": 643,
               "EndOffset": 749,
               "Path": 1,
@@ -390,44 +396,44 @@
               "Hits": 0
             },
             {
-              "Line": 92,
+              "Line": 93,
               "Offset": 606,
               "EndOffset": 807,
               "Path": 1,
               "Ordinal": 25,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 111,
+              "Line": 112,
               "Offset": 833,
               "EndOffset": 835,
               "Path": 0,
               "Ordinal": 32,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 111,
+              "Line": 112,
               "Offset": 833,
               "EndOffset": 874,
               "Path": 1,
               "Ordinal": 33,
-              "Hits": 0
+              "Hits": 1
             },
             {
-              "Line": 90,
+              "Line": 91,
               "Offset": 569,
               "EndOffset": 876,
               "Path": 1,
               "Ordinal": 23,
-              "Hits": 0
+              "Hits": 78
             },
             {
-              "Line": 46,
+              "Line": 47,
               "Offset": 899,
               "EndOffset": 904,
               "Path": 0,
               "Ordinal": 34,
-              "Hits": 0
+              "Hits": 8
             }
           ]
         }
@@ -435,19 +441,19 @@
       "GildedRose.Item": {
         "System.String GildedRose.Item::get_Name()": {
           "Lines": {
-            "124": 0
+            "125": 396
           },
           "Branches": []
         },
         "System.Int32 GildedRose.Item::get_SellIn()": {
           "Lines": {
-            "126": 0
+            "127": 312
           },
           "Branches": []
         },
         "System.Int32 GildedRose.Item::get_Quality()": {
           "Lines": {
-            "128": 0
+            "129": 297
           },
           "Branches": []
         }

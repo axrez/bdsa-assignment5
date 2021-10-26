@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using GildedRose;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace GildedRose.Tests
@@ -74,20 +74,52 @@ namespace GildedRose.Tests
 
 
         [Fact]
-        public void test()
+        public void AgedBriesQualityIncreases()
         {
-
+            app.UpdateQuality();
+            var brie = app.Items.Where(item => item.Name == "Aged Brie").FirstOrDefault();
+            Assert.Equal(1, brie.Quality);
         }
 
+        [Fact]
+        public void common_item_degrade_twice_as_fast_when_sellin_date_reached()
+        {
+            var item = new Item { Name = "Common Item", SellIn = 2, Quality = 10 };
+            app.Items.Add(item);
 
+            for (int i = 0; i < 3; i++)
+            {
+                app.UpdateQuality();
+            }
 
+            Assert.Equal(6, item.Quality);
+        }
+
+        [Fact]
+        public void common_item_cannot_reach_negative_quality()
+        {
+
+            var item = new Item { Name = "Common Item", SellIn = 10, Quality = 0 };
+            app.Items.Add(item);
+            app.UpdateQuality();
+
+            Assert.Equal(0, item.Quality);
+        }
+
+        [Fact]
+        public void sulfuras_quality_and_sellin_properties_never_change()
+        {
+
+            Assert.Equal(0, app.Items[3].SellIn);
+            Assert.Equal(80, app.Items[3].Quality);
+
+            app.UpdateQuality();
+
+            Assert.Equal(0, app.Items[3].SellIn);
+            Assert.Equal(80, app.Items[3].Quality);
+        }
 
         //Tests to make:
-        // Once the sell by date has passed, Quality degrades twice as fast
-        // The Quality of an item is never negative
-        // "Aged Brie" actually increases in Quality the older it gets
-        // The Quality of an item is never more than 50
-        // "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
         // "Backstage passes", like aged brie, increases in Quality as it's SellIn value approaches; Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but Quality drops to 0 after the concert
     }
 }
