@@ -15,13 +15,13 @@ namespace GildedRose.Tests
                 Items = new List<Item>
                 {
                     new Item { Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20 },
-                    new Item { Name = "Aged Brie", SellIn = 2, Quality = 0 },
+                    new IncreasingItem { Name = "Aged Brie", SellIn = 2, Quality = 0 },
                     new Item { Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7 },
-                    new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80 },
-                    new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 80 },
-                    new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 15, Quality = 20 },
-                    new Item { Name = "Backstage passes to a TAFKAL80ETC concert",SellIn = 10,Quality = 9},
-                    new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 9 },
+                    new LegendaryItem { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80 },
+                    new LegendaryItem { Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 80 },
+                    new TimeDependantItem { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 15, Quality = 20 },
+                    new TimeDependantItem { Name = "Backstage passes to a TAFKAL80ETC concert",SellIn = 10,Quality = 9},
+                    new TimeDependantItem { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 9 },
 				    // this conjured item does not work properly yet
 				    new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 }
                 }
@@ -50,48 +50,50 @@ namespace GildedRose.Tests
         }
 
         [Fact]
-        public void QualityOfItemCanNotBeOver50(){    
-            var item = new Item { Name = "Aged Brie", SellIn = 5, Quality = 50 };
+        public void QualityOfItemCanNotBeOver50()
+        {
+            var item = new IncreasingItem { Name = "Aged Brie", SellIn = 5, Quality = 50 };
             app.Items.Add(item);
-        
+
             app.UpdateQuality();
 
             Assert.Equal(50, item.Quality);
         }
 
         [Fact]
-        public void QualityOfBackstagePassesIncreasesInQualityBy2WhenThereAre10DaysLeft(){
-           var backstagePass = app.Items.Where(item => item.Name.Contains("Backstage passes") && item.SellIn == 10).FirstOrDefault();
+        public void QualityOfBackstagePassesIncreasesInQualityBy2WhenThereAre10DaysLeft()
+        {
+            var backstagePass = app.Items.Where(item => item.Name.Contains("Backstage passes") && item.SellIn == 10).FirstOrDefault();
 
-           app.UpdateQuality();
-           Assert.Equal(11, backstagePass.Quality);
-
-
-        }
-
-        [Fact]
-        public void QualityOfBackstagePassesIncreasesInQualityBy2WhenThereAre5DaysLeft(){
-           var backstagePass = app.Items.Where(item => item.Name.Contains("Backstage passes") && item.SellIn == 5).FirstOrDefault();
-
-           app.UpdateQuality();
-           Assert.Equal(12, backstagePass.Quality);
+            app.UpdateQuality();
+            Assert.Equal(11, backstagePass.Quality);
 
 
         }
 
         [Fact]
-        public void QualityOfBackstagePassesis0whenTheSellInIs0(){
-           var backstagePass = app.Items.Where(item => item.Name.Contains("Backstage passes") && item.SellIn == 5).FirstOrDefault();
+        public void QualityOfBackstagePassesIncreasesInQualityBy2WhenThereAre5DaysLeft()
+        {
+            var backstagePass = app.Items.Where(item => item.Name.Contains("Backstage passes") && item.SellIn == 5).FirstOrDefault();
 
-           for(int i = 0; i<6; i++){
+            app.UpdateQuality();
+            Assert.Equal(12, backstagePass.Quality);
+
+
+        }
+
+        [Fact]
+        public void QualityOfBackstagePassesis0whenTheSellInIs0()
+        {
+            var backstagePass = app.Items.Where(item => item.Name.Contains("Backstage passes") && item.SellIn == 5).FirstOrDefault();
+
+            for (int i = 0; i < 6; i++)
+            {
                 app.UpdateQuality();
-           }
+            }
 
-           Assert.Equal(0, backstagePass.Quality);
-
-
+            Assert.Equal(0, backstagePass.Quality);
         }
-
 
 
         [Fact]
@@ -140,7 +142,17 @@ namespace GildedRose.Tests
             Assert.Equal(80, app.Items[3].Quality);
         }
 
-        //Tests to make:
-        // "Backstage passes", like aged brie, increases in Quality as it's SellIn value approaches; Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but Quality drops to 0 after the concert
+        [Fact]
+        public void TestName()
+        {
+            var item = new ConjuredItem { Name = "Cnojured cookis", SellIn = 2, Quality = 10 };
+            app.Items.Add(item);
+
+            app.UpdateQuality();
+            app.UpdateQuality();
+            app.UpdateQuality();
+
+            Assert.Equal(2, item.Quality);
+        }
     }
 }
