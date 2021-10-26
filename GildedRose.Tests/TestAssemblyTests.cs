@@ -20,8 +20,8 @@ namespace GildedRose.Tests
                     new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80 },
                     new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 80 },
                     new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 15, Quality = 20 },
-                    new Item { Name = "Backstage passes to a TAFKAL80ETC concert",SellIn = 10,Quality = 49},
-                    new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 49 },
+                    new Item { Name = "Backstage passes to a TAFKAL80ETC concert",SellIn = 10,Quality = 9},
+                    new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 9 },
 				    // this conjured item does not work properly yet
 				    new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 }
                 }
@@ -55,11 +55,10 @@ namespace GildedRose.Tests
         }
 
         [Fact]
-        public void QualityOfAgedBrieBeCanNotBeOver50(){
-            var item = new Item { Name = "Aged Brie", SellIn = 10, Quality = 50 };
+        public void QualityOfItemCanNotBeOver50(){    
+            var item = new Item { Name = "Aged Brie", SellIn = 5, Quality = 50 };
             app.Items.Add(item);
-
-            //var brie = app.get{}
+        
             app.UpdateQuality();
 
             Assert.Equal(50, item.Quality);
@@ -67,7 +66,34 @@ namespace GildedRose.Tests
 
         [Fact]
         public void QualityOfBackstagePassesIncreasesInQualityBy2WhenThereAre10DaysLeft(){
-           
+           var backstagePass = app.Items.Where(item => item.Name.Contains("Backstage passes") && item.SellIn == 10).FirstOrDefault();
+
+           app.UpdateQuality();
+           Assert.Equal(11, backstagePass.Quality);
+
+
+        }
+
+        [Fact]
+        public void QualityOfBackstagePassesIncreasesInQualityBy2WhenThereAre5DaysLeft(){
+           var backstagePass = app.Items.Where(item => item.Name.Contains("Backstage passes") && item.SellIn == 5).FirstOrDefault();
+
+           app.UpdateQuality();
+           Assert.Equal(12, backstagePass.Quality);
+
+
+        }
+
+        [Fact]
+        public void QualityOfBackstagePassesis0whenTheSellInIs0(){
+           var backstagePass = app.Items.Where(item => item.Name.Contains("Backstage passes") && item.SellIn == 5).FirstOrDefault();
+
+           for(int i = 0; i<6; i++){
+                app.UpdateQuality();
+           }
+
+           Assert.Equal(0, backstagePass.Quality);
+
 
         }
 
