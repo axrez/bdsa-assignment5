@@ -41,7 +41,7 @@ namespace GildedRose.Tests
             app.Items.Add(item);
             app.UpdateQuality();
 
-            Assert.Equal(4, item.Quality - 1);
+            Assert.Equal(4, item.Quality);
         }
 
         [Fact]
@@ -51,8 +51,27 @@ namespace GildedRose.Tests
             app.Items.Add(item);
             app.UpdateQuality();
 
-            Assert.Equal(4, item.SellIn - 1);
+            Assert.Equal(4, item.SellIn);
         }
+
+        [Fact]
+        public void QualityOfAgedBrieBeCanNotBeOver50(){
+            var item = new Item { Name = "Aged Brie", SellIn = 10, Quality = 50 };
+            app.Items.Add(item);
+
+            //var brie = app.get{}
+            app.UpdateQuality();
+
+            Assert.Equal(50, item.Quality);
+        }
+
+        [Fact]
+        public void QualityOfBackstagePassesIncreasesInQualityBy2WhenThereAre10DaysLeft(){
+           
+
+        }
+
+
 
         [Fact]
         public void test()
