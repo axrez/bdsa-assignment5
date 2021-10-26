@@ -28,11 +28,6 @@ namespace GildedRose.Tests
             };
         }
 
-        [Fact]
-        public void TestTheTruth()
-        {
-            Assert.True(true);
-        }
 
         [Fact]
         public void CommonItemDegradeOneValuePerDay()
