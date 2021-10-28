@@ -92,8 +92,6 @@ namespace GildedRose.Tests
 
         }
 
-
-
         [Fact]
         public void AgedBriesQualityIncreases()
         {
@@ -140,6 +138,18 @@ namespace GildedRose.Tests
             Assert.Equal(80, app.Items[3].Quality);
         }
 
+        [Fact]
+        public void test_conjured_item_works() {
+            var item = new Item { Name = "Conjured Mana Cake", SellIn = 2, Quality = 10};
+            app.Items.Add(item);
+            
+            app.UpdateQuality();
+            app.UpdateQuality();
+            app.UpdateQuality();
+
+            Assert.Equal(2, item.Quality);
+
+        }
         //Tests to make:
         // "Backstage passes", like aged brie, increases in Quality as it's SellIn value approaches; Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but Quality drops to 0 after the concert
     }
