@@ -140,14 +140,20 @@ namespace GildedRose.Tests
 
         [Fact]
         public void test_conjured_item_works() {
-            var item = new Item { Name = "Conjured Mana Cake", SellIn = 2, Quality = 10};
-            app.Items.Add(item);
+            var cake = new Item { Name = "Conjured Mana Cake", SellIn = 2, Quality = 10};
+            var cinnamon = new Item { Name = "Powerful Conjured Cinnamon Roll", SellIn = 2, Quality = 12};
+
+
+
+            app.Items.Add(cake);
+            app.Items.Add(cinnamon);
             
             app.UpdateQuality();
             app.UpdateQuality();
             app.UpdateQuality();
 
-            Assert.Equal(2, item.Quality);
+            Assert.Equal(2, cake.Quality);
+            Assert.Equal(4, cinnamon.Quality);
 
         }
         //Tests to make:
